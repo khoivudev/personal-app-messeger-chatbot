@@ -20,4 +20,4 @@ app.post('/webhook', messageWebhook);
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || process.env.IP);
 
-server.listen(app.get('port'), app.get('ip'), () => console.log("Chat bot server listening at %s:%d", app.get('ip'), app.get('port')));
+server.listen(app.get('port'), app.get('ip'), () => console.log("Chat bot server listening at %s:%d \n%s,\n%s,\n%s", app.get('ip'), app.get('port'), process.env.DIALOGFLOW_CLIENT_EMAIL, process.env.FACEBOOK_ACCESS_TOKEN, process.env.DIALOGFLOW_CLIENT_EMAIL));
