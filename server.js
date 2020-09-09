@@ -40,7 +40,7 @@ app.post('/webhook', function(req, res) {
                 if (message.message.text) {
                     var text = message.message.text;
                     console.log(text); // In tin nhắn người dùng
-                    sendMessage(senderId, "Tui là bot đây: " + text);
+                    sendMessage(senderId, "Hello.Nice to meet you. I'm assistant of Mr.Khoi. Can I help you?");
                 }
             }
         }
