@@ -8,7 +8,7 @@ module.exports = (req, res) => {
             var senderId = message.sender.id;
             if (event.message) {
                 // If user send text
-                if (message.message.text) {
+                if (event.message.text) {
                     var text = event.message.text;
                     console.log(text); // In tin nhắn người dùng
                     processMessage(event);
