@@ -23,7 +23,7 @@ const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 // Remember the Page Access Token you got from Facebook earlier?
 // Don't forget to add it to your `variables.env` file.
 const { FACEBOOK_ACCESS_TOKEN } = process.env.FACEBOOK_ACCESS_TOKEN;
-
+console.log("ENV VARIABLE:\n%s\n,%s\n,%s", process.env.DIALOGFLOW_CLIENT_EMAIL, process.env.FACEBOOK_ACCESS_TOKEN, process.env.DIALOGFLOW_PRIVATE_KEY);
 const sendMessage = (userId, message) => {
     console.log(userId + ":" + message);
     request({
