@@ -20,14 +20,14 @@ const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
 // Remember the Page Access Token you got from Facebook earlier?
 // Don't forget to add it to your `variables.env` file.
-const { FACEBOOK_ACCESS_TOKEN } = "EAAJUPFUQ9b4BAEdxmzKNRRBZAznVjkglG2VrJIUAZBeOV7ZC3DkH5VK7gj4izkjgEp3XsPnZCOuhL46ridgmEhOwRGMN4w0aa0FZBitB9yvxmgKPSfWwsiZB2Xh3iu9ZCWKt9iZAuMZA8wfb4tFNxDmcQ3wd52fIlzC2AwZAciRWUjI3rc1qaZB75tc";
+//const { FACEBOOK_ACCESS_TOKEN } = "...";
 
-const sendTextMessage = (userId, message) => {
+const sendMessage = (userId, message) => {
     console.log(userId + ":" + message);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: FACEBOOK_ACCESS_TOKEN,
+            access_token: "EAAJUPFUQ9b4BAJTTZBoanZByJPs6Jn2lDMZCqDxwqiBfxIiBBQYDZCsHfvqGjZC5TWQIsivM7ZAMdRvYNGOgMXzk8SNKz8MMKtEeLWMs5ij48sRzJ9pIwc6iCZCmsAuK5BVxhoLTPPB8MjLS6f3qGZATZAcZANh7w3nmkxKn51xfcC6GJuV2BiRHZBj",
         },
         method: 'POST',
         json: {
@@ -35,7 +35,7 @@ const sendTextMessage = (userId, message) => {
                 id: userId
             },
             message: {
-                text: message,
+                text: message
             },
         }
     });
@@ -58,8 +58,8 @@ module.exports = (event) => {
     sessionClient
         .detectIntent(request)
         .then(responses => {
-            const result = responses[0].queryResult || "Sorry. I'm busy now";
-            return sendTextMessage(userId, result.fulfillmentText);
+            const result = responses[0].queryResult || "I cannot reply you right now. I'm so sorry";
+            return sendMessage(userId, result.fulfillmentText);
         })
         .catch(err => {
             console.error('ERROR:', err);
