@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     for (var entry of entries) {
         var events = entry.messaging;
         for (var event of events) {
-            var senderId = message.sender.id;
+            var senderId = event.sender.id;
             if (event.message) {
                 // If user send text
                 if (event.message.text) {
