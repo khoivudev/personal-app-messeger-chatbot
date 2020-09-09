@@ -10,8 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', verifyWebhook);
 app.post('/', messageWebhook);
+app.get('/', (req, res) => {
+    res.send("Home page. Server running okay.");
+});
 
-
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);
-app.set('ip', process.env.OPENSHIFT_NODEJS_IP || process.env.IP);
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP);
 app.listen(app.get('port'), app.get('ip'), () => console.log('Express server is listening on port 5000'));
