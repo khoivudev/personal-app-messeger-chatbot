@@ -22,7 +22,7 @@ const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 // Don't forget to add it to your `variables.env` file.
 const { FACEBOOK_ACCESS_TOKEN } = "EAAJUPFUQ9b4BAEdxmzKNRRBZAznVjkglG2VrJIUAZBeOV7ZC3DkH5VK7gj4izkjgEp3XsPnZCOuhL46ridgmEhOwRGMN4w0aa0FZBitB9yvxmgKPSfWwsiZB2Xh3iu9ZCWKt9iZAuMZA8wfb4tFNxDmcQ3wd52fIlzC2AwZAciRWUjI3rc1qaZB75tc";
 
-const sendTextMessage = (userId, text) => {
+const sendTextMessage = (userId, message) => {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
@@ -34,7 +34,7 @@ const sendTextMessage = (userId, text) => {
                 id: userId
             },
             message: {
-                text,
+                text: message,
             },
         }
     });
