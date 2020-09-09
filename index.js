@@ -16,4 +16,4 @@ app.get('/', (req, res) => {
 
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP);
-app.listen(app.get('port'), app.get('ip'), () => console.log('Express server is listening on port 5000'));
+app.listen(app.get('port'), app.get('ip'), () => console.log("Chat bot server listening at %s:%d ", app.get('ip'), app.get('port')));
