@@ -54,6 +54,7 @@ module.exports = (event) => {
         },
     };
 
+    /*
     sessionClient
         .detectIntent(request)
         .then(responses => {
@@ -63,4 +64,6 @@ module.exports = (event) => {
         .catch(err => {
             console.error('ERROR:', err);
         });
+    */
+    return sendTextMessage(userId, "Sorry. I'm busy now");
 }
