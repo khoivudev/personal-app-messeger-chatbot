@@ -23,13 +23,13 @@ const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 // Remember the Page Access Token you got from Facebook earlier?
 // Don't forget to add it to your `variables.env` file.
 const { FACEBOOK_ACCESS_TOKEN } = process.env.FACEBOOK_ACCESS_TOKEN;
-console.log("ENV VARIABLE:\n%s\n,%s\n,%s", process.env.DIALOGFLOW_CLIENT_EMAIL, process.env.FACEBOOK_ACCESS_TOKEN, process.env.DIALOGFLOW_PRIVATE_KEY);
+//console.log("ENV VARIABLE:\n%s\n%s\n%s", process.env.DIALOGFLOW_CLIENT_EMAIL, process.env.FACEBOOK_ACCESS_TOKEN, process.env.DIALOGFLOW_PRIVATE_KEY);
 const sendMessage = (userId, message) => {
     console.log(userId + ":" + message);
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: FACEBOOK_ACCESS_TOKEN,
+            access_token: "EAAJUPFUQ9b4BAJTTZBoanZByJPs6Jn2lDMZCqDxwqiBfxIiBBQYDZCsHfvqGjZC5TWQIsivM7ZAMdRvYNGOgMXzk8SNKz8MMKtEeLWMs5ij48sRzJ9pIwc6iCZCmsAuK5BVxhoLTPPB8MjLS6f3qGZATZAcZANh7w3nmkxKn51xfcC6GJuV2BiRHZBj",
         },
         method: 'POST',
         json: {
