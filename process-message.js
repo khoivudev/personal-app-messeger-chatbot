@@ -57,7 +57,7 @@ module.exports = (event) => {
     sessionClient
         .detectIntent(request)
         .then(responses => {
-            const result = responses[0].queryResult;
+            const result = responses[0].queryResult || "Sorry. I'm busy now";
             return sendTextMessage(userId, result.fulfillmentText);
         })
         .catch(err => {
