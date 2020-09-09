@@ -1,6 +1,6 @@
 const processMessage = require('./process-message');
 
-module.exports = (req, res) => {
+const messageWebhook = (req, res) => {
     var entries = req.body.entry;
     for (var entry of entries) {
         var events = entry.messaging;
@@ -18,3 +18,5 @@ module.exports = (req, res) => {
     }
     res.status(200).send("OK");
 };
+
+module.exports = messageWebhook;
