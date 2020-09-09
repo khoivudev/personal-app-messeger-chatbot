@@ -5,6 +5,7 @@ const verifyWebhook = require('./verify-webhook');
 var http = require('http');
 const app = express();
 var server = http.createServer(app);
+var request = require("request");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.send("Home page. Server running okay.");
 });
+
 app.get('/webhook', verifyWebhook);
 app.post('/webhook', messageWebhook);
 

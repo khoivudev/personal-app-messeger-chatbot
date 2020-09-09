@@ -1,15 +1,10 @@
 const verifyWebhook = (req, res) => {
     let VERIFY_TOKEN = 'maxacnhantrongungdungserverjs';
 
-    let mode = req.query['hub.mode'];
-    let token = req.query['hub.verify_token'];
-    let challenge = req.query['hub.challenge'];
-
-    if (mode && token === VERIFY_TOKEN) {
-        res.status(200).send(challenge);
-    } else {
-        res.sendStatus(403);
+    if (req.query['hub.verify_token'] === VERIFY_TOKEN) {
+        res.send(req.query['hub.challenge']);
     }
+    res.send('Error, wrong validation token');
 };
 
 module.exports = verifyWebhook;
