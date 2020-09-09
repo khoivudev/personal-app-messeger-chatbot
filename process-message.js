@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-
+var request = require("request");
 // You can find your project ID in your Dialogflow agent settings
 const projectId = 'mikasa-e9mw'; //https://dialogflow.com/docs/agents#settings
 const sessionId = '123456';
@@ -23,23 +23,21 @@ const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 const { FACEBOOK_ACCESS_TOKEN } = "EAAJUPFUQ9b4BAEdxmzKNRRBZAznVjkglG2VrJIUAZBeOV7ZC3DkH5VK7gj4izkjgEp3XsPnZCOuhL46ridgmEhOwRGMN4w0aa0FZBitB9yvxmgKPSfWwsiZB2Xh3iu9ZCWKt9iZAuMZA8wfb4tFNxDmcQ3wd52fIlzC2AwZAciRWUjI3rc1qaZB75tc";
 
 const sendTextMessage = (userId, text) => {
-    return fetch(
-        `https://graph.facebook.com/v2.6/me/messages?access_token=${FACEBOOK_ACCESS_TOKEN}`, {
-            headers: {
-                'Content-Type': 'application/json',
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {
+            access_token: FACEBOOK_ACCESS_TOKEN,
+        },
+        method: 'POST',
+        json: {
+            recipient: {
+                id: userId
             },
-            method: 'POST',
-            body: JSON.stringify({
-                messaging_type: 'RESPONSE',
-                recipient: {
-                    id: userId,
-                },
-                message: {
-                    text,
-                },
-            }),
+            message: {
+                text,
+            },
         }
-    );
+    });
 }
 
 module.exports = (event) => {
