@@ -7,7 +7,11 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get('/', verifyWebhook);
 app.post('/', messageWebhook);
 
-app.listen(5000, () => console.log('Express server is listening on port 5000'));
+
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || process.env.IP);
+app.listen(app.get('port'), app.get('ip'), () => console.log('Express server is listening on port 5000'));
