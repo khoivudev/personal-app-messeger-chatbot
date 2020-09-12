@@ -25,7 +25,7 @@ const sendMessage = (userId, message) => {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: "EAAJUPFUQ9b4BAJTTZBoanZByJPs6Jn2lDMZCqDxwqiBfxIiBBQYDZCsHfvqGjZC5TWQIsivM7ZAMdRvYNGOgMXzk8SNKz8MMKtEeLWMs5ij48sRzJ9pIwc6iCZCmsAuK5BVxhoLTPPB8MjLS6f3qGZATZAcZANh7w3nmkxKn51xfcC6GJuV2BiRHZBj",
+            access_token: "EAAJUPFUQ9b4BALE9lZBrmZCSUlHudRxibZBJ2nqxSPZCSrtrr094QJZAiKPP4ZCKUrDBX4oHNgm34ACNWzi3nIFZABT11fWaFFT5mOna7GQtmFz7P8jhFLSAZCcvc2AyvcdGD1lCJlrqDKhZCeyM40fYrWN9cyHHoOSLugynuQYDdf0VXw3f2L6ZCj",
         },
         method: 'POST',
         json: {
