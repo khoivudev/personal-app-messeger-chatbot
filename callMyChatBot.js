@@ -46,7 +46,8 @@ module.exports = (event) => {
         console.log(`statusCode: ${res.statusCode}`)
 
         res.on('data', (d) => {
-            return sendMessage(userId, result.fulfillmentText);
+            recevied_message = JSON.parse(d.toString());
+            return sendMessage(userId, recevied_message.results);
         })
     })
 
