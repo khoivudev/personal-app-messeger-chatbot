@@ -1,3 +1,5 @@
+// Call my API Chatbot server on Heroku
+
 var request = require("request");
 
 // Remember the Page Access Token you got from Facebook earlier?
