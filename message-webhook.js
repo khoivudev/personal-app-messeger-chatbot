@@ -1,5 +1,5 @@
 const processMessage = require('./process-message');
-
+const callMyChatBot = require('./callMyChatBot');
 const messageWebhook = (req, res) => {
     var entries = req.body.entry;
     for (var entry of entries) {
@@ -11,7 +11,8 @@ const messageWebhook = (req, res) => {
                 if (event.message.text) {
                     var text = event.message.text;
                     console.log(text); // In tin nhắn người dùng
-                    processMessage(event);
+                    //processMessage(event);
+                    callMyChatBot(event);
                 }
             }
         }
