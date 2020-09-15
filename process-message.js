@@ -1,3 +1,5 @@
+// Call Dialogflow Google API
+
 const fetch = require('node-fetch');
 var request = require("request");
 // You can find your project ID in your Dialogflow agent settings
@@ -25,7 +27,7 @@ const sendMessage = (userId, message) => {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: "EAAJUPFUQ9b4BALE9lZBrmZCSUlHudRxibZBJ2nqxSPZCSrtrr094QJZAiKPP4ZCKUrDBX4oHNgm34ACNWzi3nIFZABT11fWaFFT5mOna7GQtmFz7P8jhFLSAZCcvc2AyvcdGD1lCJlrqDKhZCeyM40fYrWN9cyHHoOSLugynuQYDdf0VXw3f2L6ZCj",
+            access_token: "EAAJUPFUQ9b4BAI9078Rzy99ag7VFX4kyS4GzZAKicZAILjl236KORIXalHsWhy25CmZBM1IYNIOapR1ouuFW7EOsZBSCCRMBYaRU25nuiyTk0VCEvmQ9l8SiFZCBrVXNWcPeJaXnAsk3RpoCWAl5ZCzyyUybiWFCwby1XE1rJZB1wZDZD",
         },
         method: 'POST',
         json: {
