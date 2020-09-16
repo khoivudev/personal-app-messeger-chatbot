@@ -35,7 +35,7 @@ module.exports = (event) => {
     })
 
     const options = {
-        hostname: 'protected-plateau-54152.herokuapp.com',
+        hostname: CHATBOT_AI_HOSTNAME,
         path: '/',
         method: 'POST',
         headers: {
