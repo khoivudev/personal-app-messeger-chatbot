@@ -11,8 +11,8 @@ const messageWebhook = (req, res) => {
                 if (event.message.text) {
                     var text = event.message.text;
                     console.log(text); // In tin nhắn người dùng
-                    processMessage(event);
-                    //callMyChatBot(event);
+                    //processMessage(event);
+                    callMyChatBot(event);
                 }
             }
         }
