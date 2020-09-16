@@ -9,7 +9,7 @@ const sendMessage = (userId, message) => {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
-            access_token: "EAAJUPFUQ9b4BAI9078Rzy99ag7VFX4kyS4GzZAKicZAILjl236KORIXalHsWhy25CmZBM1IYNIOapR1ouuFW7EOsZBSCCRMBYaRU25nuiyTk0VCEvmQ9l8SiFZCBrVXNWcPeJaXnAsk3RpoCWAl5ZCzyyUybiWFCwby1XE1rJZB1wZDZD",
+            access_token: process.env.FACEBOOK_ACCESS_TOKEN,
         },
         method: 'POST',
         json: {
