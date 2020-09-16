@@ -35,7 +35,7 @@ module.exports = (event) => {
     })
 
     const options = {
-        hostname: CHATBOT_AI_HOSTNAME,
+        hostname: process.env.CHATBOT_AI_HOSTNAME,
         path: '/',
         method: 'POST',
         headers: {
